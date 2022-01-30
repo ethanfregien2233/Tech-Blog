@@ -9,8 +9,8 @@ const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const app = express();
 
-const ses = {
-    secret: 'password',
+const sess = {
+    secret: 'super secret secret',
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -19,7 +19,7 @@ const ses = {
     })
 };
 
-app.use(session(ses));
+app.use(session(sess));
 app.engine('handlebars', hbs.engine); 
 app.set('view engine', 'handlebars'); 
 
