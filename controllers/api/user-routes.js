@@ -53,7 +53,7 @@ router.post('/', (req, res) => {
 //login
 router.post('/login', (req, res) => { 
     User.findOne({
-        username: {username: req.body.username}
+        where: {username: req.body.username}
     })
     .then(dbUserData => {
         if(!dbUserData) {
